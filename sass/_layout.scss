@@ -37,6 +37,7 @@
 
 .detail {
   display: flex;
+  font-size: 1.4rem;
   padding: 4.5rem;
   background-color: var(--color-grey-light-1);
   border-bottom: var(--line);
@@ -44,7 +45,6 @@
 
 .description {
   background-color: #fff;
-  font-size: 1.4rem;
   flex: 0 0 60%;
   padding: 3rem;
   margin-right: 4.5rem;
@@ -52,6 +52,8 @@
 }
 
 .user-reviews {
-  background-color: yellowgreen;
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
