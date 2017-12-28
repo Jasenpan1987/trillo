@@ -21,6 +21,9 @@
 html {
   box-sizing: border-box;
   font-size: 10px; }
+  @media only screen and (max-width: 1100px) {
+    html {
+      font-size: 8px; } }
 
 *,
 *::before,
@@ -39,11 +42,16 @@ body {
   color: var(--color-grey-dark-2); }
 
 .container {
-  max-width: 114rem;
+  max-width: 120rem;
   margin: 8rem auto;
   background-color: var(--color-grey-light-1);
   box-shadow: var(--shadow-dark);
   min-height: 50rem; }
+  @media only screen and (max-width: 1200px) {
+    .container {
+      margin: 0;
+      max-width: 100%;
+      width: 100%; } }
 
 .header {
   height: 7rem;
@@ -53,9 +61,17 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center; }
+  @media only screen and (max-width: 1100px) {
+    .header {
+      flex-wrap: wrap;
+      height: 11rem;
+      align-content: space-around; } }
 
 .content {
   display: flex; }
+  @media only screen and (max-width: 900px) {
+    .content {
+      flex-direction: column; } }
 
 .sidebar {
   display: flex;
@@ -74,6 +90,12 @@ body {
   padding: 4.5rem;
   background-color: var(--color-grey-light-1);
   border-bottom: var(--line); }
+  @media only screen and (max-width: 900px) {
+    .detail {
+      padding: 2.5rem; } }
+  @media only screen and (max-width: 600px) {
+    .detail {
+      flex-direction: column; } }
 
 .description {
   background-color: #fff;
@@ -81,6 +103,14 @@ body {
   padding: 3rem;
   margin-right: 4.5rem;
   box-shadow: var(--shadow-light); }
+  @media only screen and (max-width: 900px) {
+    .description {
+      padding: 2rem;
+      margin-right: 2.5rem; } }
+  @media only screen and (max-width: 600px) {
+    .description {
+      margin-right: 0;
+      margin-bottom: 3rem; } }
 
 .user-reviews {
   flex: 1;
@@ -97,6 +127,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center; }
+  @media only screen and (max-width: 500px) {
+    .search {
+      order: 1;
+      flex: 0 0 100%;
+      background-color: var(--color-grey-light-2); } }
   .search__input {
     font-family: inherit;
     font-size: inherit;
@@ -171,10 +206,20 @@ body {
   font-size: 1.4rem;
   list-style: none;
   margin-top: 3.5rem; }
+  @media only screen and (max-width: 900px) {
+    .side-nav {
+      display: flex;
+      margin: 0; } }
   .side-nav__item {
     position: relative; }
     .side-nav__item:not(:last-child) {
       margin-bottom: .5rem; }
+      @media only screen and (max-width: 900px) {
+        .side-nav__item:not(:last-child) {
+          margin-bottom: 0; } }
+    @media only screen and (max-width: 900px) {
+      .side-nav__item {
+        flex: 1; } }
     .side-nav__item::before {
       content: "";
       position: absolute;
@@ -186,9 +231,17 @@ body {
       transform: scaleY(0);
       transform-origin: top;
       transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s, background-color 0.2s; }
+      @media only screen and (max-width: 900px) {
+        .side-nav__item::before {
+          width: 100%;
+          transition: transform .2s;
+          transform-origin: bottom; } }
     .side-nav__item:hover::before, .side-nav__item--active::before {
       transform: scaleY(1);
       width: 100%; }
+      @media only screen and (max-width: 900px) {
+        .side-nav__item:hover::before, .side-nav__item--active::before {
+          transform: scaleY(1); } }
     .side-nav__item:active::before {
       background-color: var(--color-primary-light); }
   .side-nav__link:link, .side-nav__link:visited {
@@ -201,17 +254,33 @@ body {
     align-items: center;
     position: relative;
     z-index: 10; }
+    @media only screen and (max-width: 900px) {
+      .side-nav__link:link, .side-nav__link:visited {
+        justify-content: center;
+        padding: 2rem; } }
+    @media only screen and (max-width: 600px) {
+      .side-nav__link:link, .side-nav__link:visited {
+        flex-direction: column;
+        padding: 1.5rem .5rem; } }
   .side-nav__icon {
     width: 1.75rem;
     height: 1.75rem;
     margin-right: 2rem;
     fill: currentColor; }
+    @media only screen and (max-width: 600px) {
+      .side-nav__icon {
+        margin-right: 0;
+        margin-bottom: .7rem;
+        height: 2rem; } }
 
 .legal {
   font-size: 1.2rem;
   text-align: center;
   padding: 2.5rem;
   color: var(--color-grey-light-4); }
+  @media only screen and (max-width: 900px) {
+    .legal {
+      display: none; } }
 
 .gallery {
   display: flex; }
@@ -262,6 +331,11 @@ body {
     text-transform: uppercase;
     letter-spacing: 1px;
     padding: 1.5rem 3rem; }
+    @media only screen and (max-width: 600px) {
+      .overview__heading {
+        font-size: 1.8rem;
+        padding: 1.25rem 2rem;
+        letter-spacing: 0; } }
   .overview__stars {
     margin-right: auto;
     display: flex; }
@@ -288,13 +362,22 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center; }
+    @media only screen and (max-width: 600px) {
+      .overview__rating {
+        padding: 0rem 1.5rem; } }
     .overview__rating--average {
       font-size: 2.25rem;
       font-weight: 300;
       margin-bottom: -3px; }
+      @media only screen and (max-width: 600px) {
+        .overview__rating--average {
+          font-size: 1.8rem; } }
     .overview__rating--count {
       font-size: 0.8rem;
       text-transform: uppercase; }
+      @media only screen and (max-width: 600px) {
+        .overview__rating--count {
+          font-size: .5rem; } }
 
 .paragraph:not(:last-of-type) {
   margin-bottom: 2rem; }
@@ -330,6 +413,8 @@ body {
   align-items: center; }
   .recommend__count {
     margin-right: auto; }
+  .recommend__friends {
+    display: flex; }
   .recommend__photo {
     box-sizing: content-box;
     height: 4rem;
@@ -338,7 +423,7 @@ body {
     border: 2px solid #fff;
     display: inline-block; }
     .recommend__photo:not(:last-child) {
-      margin-right: -1.5rem; }
+      margin-right: -2rem; }
 
 .review {
   background-color: #fff;
@@ -350,6 +435,10 @@ body {
   justify-content: flex-start;
   position: relative;
   overflow: hidden; }
+  @media only screen and (max-width: 900px) {
+    .review {
+      padding: 2rem;
+      margin-bottom: 3rem; } }
   .review::before {
     content: "\201C";
     color: var(--color-grey-light-2);
@@ -394,6 +483,9 @@ body {
 .cta {
   padding: 3.5rem 0;
   text-align: center; }
+  @media only screen and (max-width: 900px) {
+    .cta {
+      padding: 2.5rem; } }
   .cta__booknow {
     letter-spacing: .1rem;
     text-transform: uppercase;
